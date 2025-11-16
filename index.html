@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4U Photo Studio - Capturăm Momente Unice</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif']
+                    },
+                    colors: {
+                        'brand-dark': '#111111', // Un negru putin mai soft
+                        'brand-gray': '#222222', // Pentru carduri
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Asigură că imaginile din portofoliu au aceeași înălțime în grid */
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-200 font-sans antialiased">
+
+    <header class="bg-brand-dark/90 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto max-w-7xl px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <img src="logo.jpg" alt="4U Photo Studio Logo" class="h-16 w-16 rounded-full">
+            </a>
+
+            <div class="hidden md:flex space-x-8">
+                <a href="#acasa" class="text-gray-200 hover:text-white transition duration-300">Acasă</a>
+                <a href="#despre" class="text-gray-200 hover:text-white transition duration-300">Despre</a>
+                <a href="#servicii" class="text-gray-200 hover:text-white transition duration-300">Servicii</a>
+                <a href="#portofoliu" class="text-gray-200 hover:text-white transition duration-300">Portofoliu</a>
+                <a href="#contact" class="text-gray-200 hover:text-white transition duration-300">Contact</a>
+            </div>
+            
+            <div class="hidden md:block">
+                <a href="#contact" class="bg-white text-brand-dark px-6 py-2 rounded-full font-semibold hover:bg-gray-300 transition duration-300 shadow-md">Rezervă Acum</a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-gray">
+            <a href="#acasa" class="block px-6 py-4 text-center text-lg hover:bg-gray-700 transition duration-300">Acasă</a>
+            <a href="#despre" class="block px-6 py-4 text-center text-lg hover:bg-gray-700 transition duration-300">Despre</a>
+            <a href="#servicii" class="block px-6 py-4 text-center text-lg hover:bg-gray-700 transition duration-300">Servicii</a>
+            <a href="#portofoliu" class="block px-6 py-4 text-center text-lg hover:bg-gray-700 transition duration-300">Portofoliu</a>
+            <a href="#contact" class="block px-6 py-4 text-center text-lg hover:bg-gray-700 transition duration-300">Contact</a>
+            <a href="#contact" class="block px-6 py-6 text-center text-lg bg-white text-brand-dark font-bold hover:bg-gray-300 transition duration-300">Rezervă Acum</a>
+        </div>
+    </header>
+
+    <section id="acasa" class="relative min-h-screen flex items-center justify-center text-center px-6">
+        <div class="absolute inset-0 bg-black/60"></div>
+        <img src="hero-bg.jpg" alt="Fundal Studio Foto Modern" class="absolute inset-0 w-full h-full object-cover -z-10">
+
+        <div class="relative z-10 max-w-3xl">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+                Capturăm Esența Fiecărui Moment
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-10" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+                Fotografie de portret, eveniment și comercială, cu o viziune unică.
+            </p>
+            <a href="#portofoliu" class="bg-white text-brand-dark px-10 py-4 rounded-full text-lg font-semibold hover:bg-gray-300 transition duration-300 shadow-xl transform hover:scale-105">
+                Vezi Portofoliul
+            </a>
+        </div>
+    </section>
+
+    <main class="container mx-auto max-w-7xl px-6 py-20 md:py-32 space-y-28">
+
+        <section id="despre" class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <h2 class="text-4xl font-bold mb-6">Despre 4U Studio</h2>
+                <p class="text-lg text-gray-400 mb-4">
+                    Suntem mai mult decât fotografi; suntem povestitori vizuali. La 4U Photo Studio, credem că fiecare imagine are o poveste de spus. Misiunea noastră este să surprindem autenticitatea și emoția, transformând clipele trecătoare în amintiri eterne.
+                </p>
+                <p class="text-lg text-gray-400 mb-8">
+                    Cu o experiență de peste [Număr] ani și o pasiune pentru perfecțiune, echipa noastră dedicată folosește cea mai modernă tehnologie și o viziune artistică pentru a livra rezultate care depășesc așteptările.
+                </p>
+                <a href="#contact" class="bg-white text-brand-dark px-8 py-3 rounded-full font-semibold hover:bg-gray-300 transition duration-300">Contactează-ne</a>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="img1.jpg" alt="Fotograf lucrând în studio" class="w-full h-auto object-cover rounded-xl shadow-2xl" style="max-height: 700px;">
+            </div>
+        </section>
+
+        <section id="servicii">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Serviciile Noastre</h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">De la portrete intime la evenimente grandioase, acoperim o gamă completă de servicii fotografice.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-brand-gray p-8 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+                    <h3 class="text-2xl font-semibold mb-3 text-white">Fotografie de Portret</h3>
+                    <p class="text-gray-400">Ședințe foto individuale, de cuplu sau de familie. Surprindem personalitatea și conexiunea autentică.</p>
+                </div>
+                <div class="bg-brand-gray p-8 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+                    <h3 class="text-2xl font-semibold mb-3 text-white">Fotografie de Eveniment</h3>
+                    <p class="text-gray-400">Nuntă, botez, evenimente corporate. Suntem prezenți discret pentru a nu rata niciun moment important.</p>
+                </div>
+                <div class="bg-brand-gray p-8 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+                    <h3 class="text-2xl font-semibold mb-3 text-white">Fotografie Comercială</h3>
+                    <p class="text-gray-400">Imagini de produs, fotografie de brand și conținut pentru social media care vinde și impresionează.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="portofoliu">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Portofoliu</h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">O imagine valorează cât o mie de cuvinte. Explorează galeria noastră.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="col-span-2 row-span-2">
+                    <img src="portofoliu1.jpg" alt="Imagine portofoliu 1" class="portfolio-img rounded-xl shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer">
+                </div>
+                <div>
+                    <img src="p2.jpg" alt="Imagine portofoliu 2" class="portfolio-img rounded-xl shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer">
+                </div>
+                <div>
+                    <img src="p3.jpg" alt="Imagine portofoliu 3" class="portfolio-img rounded-xl shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer">
+                </div>
+                <div>
+                    <img src="p4.jpg" alt="Imagine portofoliu 4" class="portfolio-img rounded-xl shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer">
+                </div>
+                <div>
+                    <img src="p5.jpg" alt="Imagine portofoliu 5" class="portfolio-img rounded-xl shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer">
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-brand-gray rounded-xl p-12 md:p-20 text-center shadow-2xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Sunteți gata să creați amintiri?</h2>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
+                Contactați-ne pentru a discuta despre proiectul dumneavoastră și pentru a stabili o ședință foto.
+            </p>
+            <a href="#contact" class="bg-white text-brand-dark px-10 py-4 rounded-full text-lg font-semibold hover:bg-gray-300 transition duration-300 shadow-xl transform hover:scale-105">
+                Rezervă o Ședință
+            </a>
+        </section>
+
+        <section id="contact" class="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div>
+                <h2 class="text-4xl font-bold mb-6">Luați legătura</h2>
+                <p class="text-lg text-gray-400 mb-10">
+                    Aveți o întrebare sau doriți să programați o întâlnire? Completați formularul alăturat sau folosiți detaliile de mai jos. Vă vom răspunde în cel mai scurt timp.
+                </p>
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <span class="text-white text-xl">📧</span>
+                        <a href="mailto:contact@4ustudio.ro" class="text-lg text-gray-300 hover:text-white">contact@4ustudio.md</a>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <span class="text-white text-xl">📞</span>
+                        <a href="tel:+40722000000" class="text-lg text-gray-300 hover:text-white">+373 22 000 000</a>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-white text-xl mt-1">📍</span>
+                        <p class="text-lg text-gray-300">Str. Fotografiei Nr. 1, <br> Chisinau</p>
+                    </div>
+                </div>
+            </div>
+
+            <form action="#" method="POST" class="space-y-6">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Numele Dvs.</label>
+                    <input type="text" name="name" id="name" required class="w-full px-4 py-3 bg-brand-gray border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white/50">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Adresă de Email</label>
+                    <input type="email" name="email" id="email" required class="w-full px-4 py-3 bg-brand-gray border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white/50">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Mesajul Dvs.</label>
+                    <textarea name="message" id="message" rows="5" required class="w-full px-4 py-3 bg-brand-gray border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white/50"></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="w-full bg-white text-brand-dark px-8 py-3 rounded-full font-semibold hover:bg-gray-300 transition duration-300 shadow-md">
+                        Trimite Mesajul
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bg-brand-gray mt-20">
+        <div class="container mx-auto max-w-7xl px-6 py-10 text-center">
+            <img src="logo.jpg" alt="4U Photo Studio Logo" class="h-20 w-20 mx-auto mb-6 rounded-full">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Facebook</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Instagram</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Pinterest</a>
+            </div>
+            <p class="text-gray-500">
+                &copy; Toate drepturile rezervate.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelectorAll('#mobile-menu a');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Închide meniul după ce se dă click pe un link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>
